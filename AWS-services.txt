@@ -3,7 +3,12 @@ AWS Services:
 ============
 
 =>Compute
-1) Amazon EC2                       - A web service that provides secure, resizable compute capacity in the cloud.
-2) Amazon EC2 Autoscaling           - Allows you to scale EC2 instances up or down
-3) Amazon Elastic Container Service - Container orchestration service for Docker container.
-4) 
+1) Amazon EC2                                           - A web service that provides secure, resizable compute capacity in the cloud.
+2) Amazon EC2 Autoscaling                               - Allows you to scale EC2 instances up or down
+3) Amazon Elastic Container Service(ECS)                - Container orchestration service for Docker container.
+4) Amazon Elastic Container Service for Kubernetes(EKS) - Makes it easy to deploy, manage and scale containerized applications using                                                                 Kubernetes.
+5) Amazon Elastic Container Registry(ECR)               - Fully managed Docker container registry which can be used to store, manage and                                                             deploy Docker images.
+6) Amazon Lightsail                                     - Easiest way to launch and manage virtual private server. It contains everything                                                           required ranging from a virtual machine, SSD based storage, data transfer, DNS                                                             management and a static IP.
+7) AWS Batch                                            - Fully Managed batch processing for any scale. Like Autosys.
+8) AWS Elastic Bean Stalk                               - Service to deploy & scale web applications developed in                                                                                   Java,.Net,PHP,Node.js,Go,Ruby,Python & Docker in the servers like Apache, Nginx,                                                           IIS & Passenger.
+9) AWS Fargate                                          - 
