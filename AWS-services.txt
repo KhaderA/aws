@@ -1,1 +1,9 @@
 
+AWS Services:
+============
+
+=>Compute
+1) Amazon EC2                       - A web service that provides secure, resizable compute capacity in the cloud.
+2) Amazon EC2 Autoscaling           - Allows you to scale EC2 instances up or down
+3) Amazon Elastic Container Service - Container orchestration service for Docker container.
+4) 
