@@ -11,4 +11,12 @@ AWS Services:
 6) Amazon Lightsail                                     - Easiest way to launch and manage virtual private server. It contains everything                                                           required ranging from a virtual machine, SSD based storage, data transfer, DNS                                                             management and a static IP.
 7) AWS Batch                                            - Fully Managed batch processing for any scale. Like Autosys.
 8) AWS Elastic Bean Stalk                               - Service to deploy & scale web applications developed in                                                                                   Java,.Net,PHP,Node.js,Go,Ruby,Python & Docker in the servers like Apache, Nginx,                                                           IIS & Passenger.
-9) AWS Fargate                                          - 
+9) AWS Fargate                                          - Its an aws technology for ECS and EKS that allows you to run containers without                                                           having to manage servers, clusters etc.With this, you are no longer required to                                                           provision, configure, scale a cluster of virtual machines to run containers.
+10) AWS Lambda                                          - Lets you run code without provisioning or managing servers.
+11) AWS Serverless Application Repository               - Enables you to quickly deploy code samples, components, complete applications of                                                           common use cases such as web & mobile backends, event & data processing,                                                                   logging, monitoring, IoT etc.
+12) Elastic Load Balancing                              - Automatically distributes incoming application traffic across multiple targets.
+                                                          1) Application Load Balancer - for http, https traffic
+                                                          2) Network Load Balancer - for tcp traffic
+                                                          3) Classic Load Balancer - basic load balancer for traffic between EC2 instances
+13) VMWare cloud on AWS                                 -                                                           
+                                                       
