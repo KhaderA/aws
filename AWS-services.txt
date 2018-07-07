@@ -2,7 +2,7 @@
 AWS Services:
 ============
 
-=>Compute
+=>COMPUTE:
 1) Amazon EC2                                           - A web service that provides secure, resizable compute capacity in the cloud.
 2) Amazon EC2 Autoscaling                               - Allows you to scale EC2 instances up or down
 3) Amazon Elastic Container Service(ECS)                - Container orchestration service for Docker container.
@@ -18,5 +18,14 @@ AWS Services:
                                                           1) Application Load Balancer - for http, https traffic
                                                           2) Network Load Balancer - for tcp traffic
                                                           3) Classic Load Balancer - basic load balancer for traffic between EC2 instances
-13) VMWare cloud on AWS                                 -                                                           
-                                                       
+13) VMWare cloud on AWS                                 - Service that allows to migrate and extend VMware Vsphere based environments to                                                             amazon cloud.
+
+=>STORAGE:
+1) Amazon Simple Storage Service(S3)
+2) Amazon Elastic Block Store(EBS)
+3) Amazon Elastic File System(EFS)
+4) Amazon Glacier
+5) AWS Storage Gateway
+6) AWS Snowball
+7) AWS Snowball Edge
+8) AWS Snowmobile
