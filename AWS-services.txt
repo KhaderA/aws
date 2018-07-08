@@ -21,11 +21,11 @@ AWS Services:
 13) VMWare cloud on AWS                                 - Service that allows to migrate and extend VMware Vsphere based environments to                                                             amazon cloud.
 
 =>STORAGE:
-1) Amazon Simple Storage Service(S3)
-2) Amazon Elastic Block Store(EBS)
-3) Amazon Elastic File System(EFS)
-4) Amazon Glacier
-5) AWS Storage Gateway
-6) AWS Snowball
+1) Amazon Simple Storage Service(S3)                    - Object Storage(files,pics,videos etc. Not suitable to install os or other things). 
+2) Amazon Elastic Block Store(EBS)                      - Provides persistent block storage volumes to be used with EC2 instances.
+3) Amazon Elastic File System(EFS)                      - Provides scalable, elastic file storage for aws cloud service and on-premises resources
+4) Amazon Glacier                                       - Data archiving solution. Lowest cost.    
+5) AWS Storage Gateway                                  - Hybrid storage service that enables your on-premise applications to access aws cloud storage.
+6) AWS Snowball                                         - Petabyte scale data transfer mechanism to move data into and out of aws cloud.
 7) AWS Snowball Edge
 8) AWS Snowmobile
