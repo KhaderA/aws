@@ -27,5 +27,5 @@ AWS Services:
 4) Amazon Glacier                                       - Data archiving solution. Lowest cost.    
 5) AWS Storage Gateway                                  - Hybrid storage service that enables your on-premise applications to access aws cloud storage.
 6) AWS Snowball                                         - Petabyte scale data transfer mechanism to move data into and out of aws cloud.
-7) AWS Snowball Edge
-8) AWS Snowmobile
+7) AWS Snowball Edge                                    - 100TB storage device. Petabyte scale data transport with onboard storage and compute capability.
+8) AWS Snowmobile                                       - Exabyte scale data transport service.
