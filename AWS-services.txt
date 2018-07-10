@@ -29,3 +29,22 @@ AWS Services:
 6) AWS Snowball                                         - Petabyte scale data transfer mechanism to move data into and out of aws cloud.
 7) AWS Snowball Edge                                    - 100TB storage device. Petabyte scale data transport with onboard storage and compute capability.
 8) AWS Snowmobile                                       - Exabyte scale data transport service.
+
+
+
+VPC Random notes:
+================
+Virtual private cloud.
+
+- A VPC has by default one main route table. It can have many tables as well
+- A subnet can have only one route table at a time. 
+- A route table can be associated with multiple subnets but a subnet cannot be associated with multiple route tables.
+
+- A VPC has an implicit router.
+- A VPC automatically comes with a main route table that you can modify.
+- Additional custom route tables can be created for your VPC but there is a limit on the number of route tables that you can create for a VPC and the number of routes you can add per route table.
+- Main route table cannot be deleted but can be replaced with a custom table that you have created.
+
+- Every single entry in route table is a route.
+- Every route speficies a destination CIDR(canonical interdomain routing) and a target
+- Every route table contains a local route for communication within th VPC over IPV4.
