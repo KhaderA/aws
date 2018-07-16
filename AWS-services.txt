@@ -62,3 +62,9 @@ Storage technologies:
   - Usually a singe storage server sharing files over network connected though Ethernet. Its basically a file server. The control of the storage medium is with the file server itself and not the accessing server's operating system. Example, the network drives that we use on our dekstop. Mostly used with file storage types with NFS, CIFS protocols.
 2) SAN - Storage area network
   -  A huge array of storage devices connected to the network through fiber cables for high speed. Each block of storage can be configured individually and mounted on different servers/devices and the accessing servers, drivers can control this block or volume of storage as if it is locally avalable in its server itself. And this storage space can be used by the acessing server for software installations. Used with block storage with iSCSI protocol.
+
+
+Lab to do:
+- create an ec2 instance with bootstrap script to install and start apache.
+- create a load balancer
+- create autoscaling config and play with different scenarios.
