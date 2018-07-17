@@ -142,3 +142,11 @@ Cluster Placement Groups(if simply placement group is mentioned, it refers to cl
 - If you stop an instance in a placement group and then start it again, it still runs in the placement group. But the start will fail if there is no enough capacity for the instance.
 - If capacity error occurs while launching an instance in a placement group(that already has running instances), stop and start all the instances in the placement group and try the launch again. Restarting the instances may migrate them to hardware that has capacity for all the requested instances.
 
+Spread Placement Groups
+-----------------------
+- A spread placement group is a group of instances that are each placed on distinct underlying hardware spanning multiple AZs.
+- Recommended for applications that have a small number of critical instances that should be kept separate from each other.
+- Keeping instances in different hardware reduces the risk of simultaneous failures that might occur if kept in same underlying hardware.
+- Here Instances of different types can be used and instances can be launced over time(not required to launch all instances at one single time)
+- You can have a max. of 7 running instances per AZ per group.
+- If start/launch of an instance in a spread placement group fails or there is no sufficient unique hardware to fulfill the request, Amazon will make more distinct hardware available over time and you can try your request again later.
