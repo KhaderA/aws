@@ -1,3 +1,15 @@
+Preparation resources:
+====================
+1. Udemy tutorial
+2. Amazon documentation
+3. Amazon frequently asked questions for selected aws services like EC2, S3, SQS, VPC, Route53, RDS
+4. White papers
+5. Sample question papers
+6. Blue print review
+
+
+
+
 
 AWS Services:
 ============
