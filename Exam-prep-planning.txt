@@ -123,3 +123,22 @@ https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.ht
 300) How Route53 checks the health of your resources:
 ----------------------------------------------------
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html
+
+
+EC2 Placement Groups:
+---------------------
+Placement groups determine how EC2 instances are placed on underlying hardware. This can be done using the below two strategies,
+
+1) Cluster - Clusters intances into a low-latency group in a single Availability Zone.
+2) Spread - spreads instances across underlying hardware spanning multiple availability zones.
+
+Cluster Placement Groups(if simply placement group is mentioned, it refers to cluster placement group):
+-------------------------
+- A cluster placement group is a logical grouping of instances within a single Availability Zone.
+- Recommended for applications that require low network latency, high network throughput(highest packet per second) or both and if the majority of the traffic is between the instances in the group. Advisable to choose EC2 instance type that supports 'Enhanced Networking'.
+- Advisable to launch the number of instances you need in the placement group in a single launch request
+- And advisable to use same EC2 instance type for all the instances in the placement group.
+- Trying to add more instances to the placement group later or trying to launch more than one instance type in the placement group may result in insufficient capacity error.
+- If you stop an instance in a placement group and then start it again, it still runs in the placement group. But the start will fail if there is no enough capacity for the instance.
+- If capacity error occurs while launching an instance in a placement group(that already has running instances), stop and start all the instances in the placement group and try the launch again. Restarting the instances may migrate them to hardware that has capacity for all the requested instances.
+
