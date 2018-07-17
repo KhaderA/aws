@@ -86,14 +86,15 @@ Route53:
 --------
 Route 53 performs 3 main functions,
 - Register domain names(link numbers for more content; 100)
-- Route internet traffic to the resources for your domain
-- check the health of your resources
+- Route internet traffic to the resources for your domain(200)
+- check the health of your resources(300)
 
 
-As I understand there are minute details in the functionalities of Route53. Like
-- used for domain registration is one feature
-- acting as a DNS service for the registered domain, is other feature
-I learnt that Customers have the choice as to what they want from Route53. Customers can use Route53 for just domain registration or also use it as the DNS service for the domain too.
+As I understand the above functions can be re-phrased for my ease of understanding like, Route53 can be,
+- used for domain registration
+- act as a DNS service for the registered domain
+- configured to perform health checks on your resources and send notification to you upon identifying any situations.
+I learnt that Customers have the choice as to what they want from Route53. Customers can use Route53 for just domain registration or also use it as the DNS service for the domain too or use all the 3 services of route53
 
 
 100) How Domain registration works:
@@ -115,3 +116,10 @@ A public hosted zone is a container that holds information about how you want to
 example.com and its subdomains like apex.example.com, acme.example.com.
 This works by creating records(resource record sets) in the hosted zone to specify how you want to route traffic for the domain and subdomains
 
+200) How Internet Traffic is Routed to your website or web application:
+----------------------------------------------------------------------
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html
+
+300) How Route53 checks the health of your resources:
+----------------------------------------------------
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html
