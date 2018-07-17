@@ -80,3 +80,38 @@ Lab to do:
 - create an ec2 instance with bootstrap script to install and start apache.
 - create a load balancer
 - create autoscaling config and play with different scenarios.
+
+
+Route53:
+--------
+Route 53 performs 3 main functions,
+- Register domain names(link numbers for more content; 100)
+- Route internet traffic to the resources for your domain
+- check the health of your resources
+
+
+As I understand there are minute details in the functionalities of Route53. Like
+- used for domain registration is one feature
+- acting as a DNS service for the registered domain, is other feature
+I learnt that Customers have the choice as to what they want from Route53. Customers can use Route53 for just domain registration or also use it as the DNS service for the domain too.
+
+
+100) How Domain registration works:
+---------------------------------
+Domain is nothing but the name of your website that you wish to call it as.
+1) You choose a domain name, checks its availability to confirm if its not already registered.
+2) Register the selected domain name with Route 53 by providing names and contact information for the domain owner and other contacts.
+   When you register a domain with Route 53, the service automatically makes itself the DNS service for the domain by following:
+   *) Creates a Hosted Zone* that has the same name as your domain
+   *) Assigns a set of 4 name servers to hosted zone. When someone calls your website from browser, these name servers tell them where to find
+      the resources(such as web server, S3 etc) of your website.
+   *) Gets the name servers from the hosted zone and adds them to the domain.
+3) At the end of registration process, Amazon sends your information to the registrar for the domain(either Amazon Registrar Inc or Gandi)
+4) The registrar sends your information to the registry for the domain. Registry is the company that sells domains.
+5) The registry stores your information about your domain in their own database and also in the public WHOIS database.
+
+* Hosted Zone:
+A public hosted zone is a container that holds information about how you want to route traffic on the internet for a specific domain such as
+example.com and its subdomains like apex.example.com, acme.example.com.
+This works by creating records(resource record sets) in the hosted zone to specify how you want to route traffic for the domain and subdomains
+
