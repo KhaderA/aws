@@ -2,7 +2,7 @@ Preparation resources:
 ====================
 1. Udemy tutorial
 2. Amazon documentation
-3. Amazon frequently asked questions for selected aws services like EC2, S3, SQS, VPC, Route53, RDS
+3. Amazon frequently asked questions for selected aws services like EC2, S3, SQS, VPC, Route53, RDS, ELB
 4. White papers
 5. Sample question papers
 6. Blue print review
@@ -50,7 +50,10 @@ Virtual private cloud.
 
 - A VPC has by default one main route table. It can have many tables as well
 - A subnet can have only one route table at a time. 
+- One subnet is always equal to one availability zone.
+- There can be multiple VPCs in a region. By default, the soft limit is 5 VPCs. But it can be increased by emailing AWS.
 - A route table can be associated with multiple subnets but a subnet cannot be associated with multiple route tables.
+- A security group can span multiple subnets but it dont span or available across VPCs. That means, the security groups that you had created under default VPC wont be available in a newly created VPC.
 
 - A VPC has an implicit router.
 - A VPC automatically comes with a main route table that you can modify.
@@ -60,6 +63,9 @@ Virtual private cloud.
 - Every single entry in route table is a route.
 - Every route speficies a destination CIDR(canonical interdomain routing) and a target
 - Every route table contains a local route for communication within th VPC over IPV4.
+- There can be only one Internet Gateway per VPC.
+
+- Security group is statefull. NACL is stateless. Stateful means that to open a port, its just enough to be defined in inbound rules, outbound rule is taken care automatically. But for stateless, to open port for both incoming and outgoing traffic, you have to define in both inbound and outbound rules.
 
 General notes on Storage types:
 ===============================
@@ -150,73 +156,3 @@ Spread Placement Groups
 - Here Instances of different types can be used and instances can be launced over time(not required to launch all instances at one single time)
 - You can have a max. of 7 running instances per AZ per group.
 - If start/launch of an instance in a spread placement group fails or there is no sufficient unique hardware to fulfill the request, Amazon will make more distinct hardware available over time and you can try your request again later.
-=====================================
-
-VPC notes:
-Default VPC and Default Subnets:
---------------------------------
-A default VPC contains,
-- a VPC with size /16 IPv4 CIDR block. That provides upto to 65.536 private IPv4 addresses.
-- a size /20 default subnet in each AZ. This provides upto 4096 addresses per subnet
-- An internet gateway connected to the default VPC
-- a Main route table for the default VPC with a rule that sends all IPv4 traffic destined for the internet to the internet gateway.
-- a default security group associated with default vpc
-- a default network access control list(ACL) associated with default VPC
-
-
-Default Subnet:
---------------
-- a default subnet by default is a public subnet.
-- a default subnet can be made private by removing the route "from the destination 0.0.0.0/0 to the internet gateway".
-- Instances launched in default subnet recieve both a public IPv4 and private IPv4 address and both public and private DNS hostname.
-- a default subnet and default VPC can be created newly. But only if they are either not available or deleted.
-- you can also delete a default VPC and default subnets
-- You can have only one default subnet per Availability Zone.
-- You cannot create a default subnet in a nondefault VPC
-- An existing non-default VPC cannot be marked as default VPC.
-
-============================================
-VPCs and Subnets
------------------
-- A VPC is specific to an AWS account
-- 5 VPC per aws region is the default limit. However this can be increased by contacting aws.
-- 1 VPC equal to 1 internet gateway
-- One VPC can have one or more subnets in each availability zone. But, Each subnet must reside entirely within one Availability Zone and cannot span zones.
-- Subnet Types:
-  1. Public Subnet: If a subnet's traffic is route to an internet gateway.
-  2. Private Subnet: If a subnet doesnt have a route to the internet gateway
-  3. VPN-only Subnet: If a subnet doesnt have a route to the internet gateway, but has its traffic routed to a virtual private gateway for a VPN connection.
-  Note: Regardless of the type of subnet, the internal IPv4 address range of the subnet is always private—AWS do not announce the address block to the internet.
-  
-- The allowed CIDR block size for VPC is between a /16 netmask(65,536 IP addresses) and /28 netmask(16 IP addresses). Additional CIDR blocks can be
-   added to a VPC as secondary CIDR blocks.
-- The CIDR block of a subnet can be the same as the CIDR block for the VPC if there is only one subnet in the VPC.
-- If there are multiple subnets in a VPC, the CIDR blocks of the subnets cannot overlap.
-- First four IP addresses and last IP address in each subnet CIDR block are not available for use.
-  For instance if the subnet CIDR block is 10.0.0.0/24, then
-  - 10.0.0.0 - Network Address
-  - 10.0.0.1 - Reserved  by AWS for the VPC router.
-  - 10.0.0.2 - Reserved by AWS. For DNS server.
-  - 10.0.0.3 - Reserved by AWS for future use.
-  - 10.0.0.255 - Network broadcast address.
-  
-  
-Subnet Routing
-===============
-- Each Subnet must be associated with a route table.
-- Each subnet that you create is automatically associated with the main route table for the VPC. You can change the association and you can change
-  the contents of the main route table.
-  
-Subnet Security
-===============
-VPC security can be increased using security groups & network ACLs.
-- Security groups control inbound and outbound traffic for your instances.
-- Network ACLs control inbound and outbound traffic for your subnets.
-
-
-
-
-
-
-
-
